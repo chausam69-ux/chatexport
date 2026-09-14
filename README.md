@@ -28,7 +28,7 @@ Static files only. GitHub Pages, Cloudflare Pages, Netlify, Vercel — push and 
 
 ## Pro unlock
 
-Set `CHECKOUT_URL` in `pro.js` to a Lemon Squeezy checkout link (product with license keys enabled). Empty = everything free. When set, PDF/CSV/.eml exports open an unlock modal; keys are validated against the Lemon Squeezy license API and cached in localStorage.
+Set `CHECKOUT_URL` and `PRODUCT_ID` in `pro.js` (Gumroad product with license keys enabled). Empty URL = everything free. When set, PDF/CSV/.eml exports open an unlock modal; keys are verified against the Gumroad license API and cached in localStorage.
 
 ## MBOX viewer (`/mbox/`)
 

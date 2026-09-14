@@ -1,8 +1,12 @@
-// Pro gate. Fill CHECKOUT_URL with your Lemon Squeezy checkout link (product with "license keys" enabled).
-// Empty URL = everything free (beta). One constant flips the paywall on.
+// Pro gate via Gumroad license keys.
+// 1. Gumroad product → Settings → enable "Generate a unique license key per sale".
+// 2. PRODUCT_ID = the product's ID (product page → Settings → shown near "License key"; NOT the permalink slug).
+// 3. CHECKOUT_URL = your product link, e.g. https://yourname.gumroad.com/l/chatexport
+// Empty CHECKOUT_URL = everything free (beta).
 export const CHECKOUT_URL = "";
+export const PRODUCT_ID = "";
 export const PRICE = "$19 one-time";
-const VALIDATE_URL = "https://api.lemonsqueezy.com/v1/licenses/validate";
+const VALIDATE_URL = "https://api.gumroad.com/v2/licenses/verify";
 const KEY = "chatexport_license";
 
 // pure: should we run the action right now?
@@ -28,11 +32,12 @@ export function gate(fn) {
 export async function activate(key) {
   const r = await fetch(VALIDATE_URL, {
     method: "POST",
-    headers: { "Content-Type": "application/x-www-form-urlencoded", Accept: "application/json" },
-    body: new URLSearchParams({ license_key: key }),
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({ product_id: PRODUCT_ID, license_key: key, increment_uses_count: "false" }),
   });
   const j = await r.json().catch(() => ({}));
-  if (!j.valid) throw new Error(j.error || "Invalid or expired key");
+  if (!j.success) throw new Error(j.message || "Invalid key");
+  if (j.purchase?.refunded || j.purchase?.chargebacked) throw new Error("This purchase was refunded");
   localStorage.setItem(KEY, key);
 }
 
@@ -46,7 +51,7 @@ function openModal(onUnlock) {
         <h3>Unlock exports</h3>
         <p>${PRICE}. Unlimited PDF, CSV and .eml exports, forever. Viewing and search stay free.</p>
         <a class="btn" id="pro-buy" target="_blank" rel="noopener">Get a license</a>
-        <label>Already have a key?<input id="pro-key" placeholder="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" autocomplete="off" spellcheck="false"></label>
+        <label>Already have a key?<input id="pro-key" placeholder="XXXXXXXX-XXXXXXXX-XXXXXXXX-XXXXXXXX" autocomplete="off" spellcheck="false"></label>
         <p class="err" id="pro-err"></p>
         <div class="row"><button class="btn ghost" value="cancel" type="submit">Close</button><button class="btn" id="pro-activate" type="button">Activate</button></div>
       </form>`;

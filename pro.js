@@ -3,8 +3,8 @@
 // 2. PRODUCT_ID = the product's ID (product page → Settings → shown near "License key"; NOT the permalink slug).
 // 3. CHECKOUT_URL = your product link, e.g. https://yourname.gumroad.com/l/chatexport
 // Empty CHECKOUT_URL = everything free (beta).
-export const CHECKOUT_URL = "";
-export const PRODUCT_ID = "";
+export const CHECKOUT_URL = "https://sandipmor.gumroad.com/l/kgnsqy";
+export const PRODUCT_ID = "GGGD3mrmhSlbwEJ4KJdeUg==";
 export const PRICE = "$19 one-time";
 const VALIDATE_URL = "https://api.gumroad.com/v2/licenses/verify";
 const KEY = "chatexport_license";

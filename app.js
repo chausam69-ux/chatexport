@@ -1,19 +1,12 @@
 import { parseChat } from "./parser.js";
+import { gate } from "./pro.js";
 
-// ---------- Pro gate (off during beta) ----------
-// ponytail: flip enabled + set checkoutUrl once a Lemon Squeezy product exists.
-const PRO = {
-  enabled: false,
-  checkoutUrl: "",
-  validateUrl: "https://api.lemonsqueezy.com/v1/licenses/validate",
-};
 
 const $ = (s) => document.querySelector(s);
 const el = {
   landing: $("#landing"), app: $("#app"), drop: $("#drop"), file: $("#file"), sample: $("#sample"),
   q: $("#q"), sender: $("#sender"), from: $("#from"), to: $("#to"), count: $("#count"),
   csv: $("#csv"), pdf: $("#pdf"), reset: $("#reset"), stats: $("#stats"), chat: $("#chat"), more: $("#more"),
-  pro: $("#pro"), buy: $("#buy"), key: $("#key"), keyerr: $("#keyerr"), activate: $("#activate"),
 };
 
 const PAGE = 300;
@@ -148,32 +141,6 @@ function exportCsv() {
   setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 }
 
-function gated(fn) {
-  return () => {
-    if (!PRO.enabled || localStorage.getItem("license")) return fn();
-    el.buy.href = PRO.checkoutUrl; el.keyerr.textContent = "";
-    el.pro.showModal();
-    el.pro.onclose = () => { if (el.pro.returnValue === "ok") fn(); };
-  };
-}
-
-el.activate.onclick = async (e) => {
-  e.preventDefault();
-  const key = el.key.value.trim();
-  if (!key) return;
-  try {
-    const r = await fetch(PRO.validateUrl, {
-      method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded", Accept: "application/json" },
-      body: new URLSearchParams({ license_key: key }),
-    });
-    const j = await r.json();
-    if (!j.valid) throw new Error(j.error || "Invalid key");
-    localStorage.setItem("license", key);
-    el.pro.close("ok");
-  } catch (err) {
-    el.keyerr.textContent = err.message;
-  }
-};
 
 // ---------- wiring ----------
 el.file.onchange = () => loadFile(el.file.files[0]);
@@ -185,8 +152,8 @@ el.sample.onclick = () => boot(SAMPLE, "sample.txt");
 let t; el.q.oninput = () => { clearTimeout(t); t = setTimeout(applyFilters, 150); };
 el.sender.onchange = el.from.onchange = el.to.onchange = applyFilters;
 el.more.onclick = () => appendPage(PAGE);
-el.pdf.onclick = gated(exportPdf);
-el.csv.onclick = gated(exportCsv);
+el.pdf.onclick = gate(exportPdf);
+el.csv.onclick = gate(exportCsv);
 el.reset.onclick = () => {
   for (const u of blobUrls.values()) URL.revokeObjectURL(u);
   blobUrls.clear(); msgs = []; filtered = []; zipFiles = null; el.file.value = "";

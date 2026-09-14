@@ -28,7 +28,7 @@ Static files only. GitHub Pages, Cloudflare Pages, Netlify, Vercel — push and 
 
 ## Pro unlock
 
-`PRO.enabled` in `app.js` is `false` during beta. Set it to `true` and fill `checkoutUrl` with a Lemon Squeezy checkout link to gate exports behind a one-time license key.
+Set `CHECKOUT_URL` in `pro.js` to a Lemon Squeezy checkout link (product with license keys enabled). Empty = everything free. When set, PDF/CSV/.eml exports open an unlock modal; keys are validated against the Lemon Squeezy license API and cached in localStorage.
 
 ## MBOX viewer (`/mbox/`)
 

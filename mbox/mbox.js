@@ -1,3 +1,4 @@
+import { gate } from "../pro.js";
 import { findFromLines, splitHeadBody, parseHeaders, parseMessage } from "../mbox-parser.js";
 
 const $ = (s) => document.querySelector(s);
@@ -131,14 +132,13 @@ async function open(m) {
     const p = document.createElement("pre"); p.textContent = msg.text || "(empty)"; body.appendChild(p);
   }
 
-  $("#eml").onclick = (e) => {
-    e.preventDefault();
+  $("#eml").onclick = gate(() => {
     const a = document.createElement("a");
     a.href = URL.createObjectURL(new Blob([raw], { type: "message/rfc822" }));
     a.download = (h.subject || "message").replace(/[^\w.-]+/g, "_").slice(0, 80) + ".eml";
     a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 1000);
-  };
-  $("#print").onclick = (e) => { e.preventDefault(); window.print(); };
+  });
+  $("#print").onclick = gate(() => window.print());
 }
 
 // ---------- export ----------
@@ -160,7 +160,7 @@ for (const ev of ["dragleave", "drop"]) document.addEventListener(ev, (e) => { e
 document.addEventListener("drop", (e) => load(e.dataTransfer.files[0]));
 let t; el.q.oninput = () => { clearTimeout(t); t = setTimeout(applyFilters, 150); };
 el.from.onchange = el.to.onchange = applyFilters;
-el.csv.onclick = exportCsv;
+el.csv.onclick = gate(exportCsv);
 el.reset.onclick = () => { file = null; index = []; filtered = []; selected = -1; el.file.value = ""; el.view.innerHTML = '<p class="empty">Select a message</p>'; el.app.hidden = true; el.landing.hidden = false; };
 
 // ---------- utils ----------

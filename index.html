@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>chatexport — Open, search &amp; print WhatsApp chat exports in your browser</title>
+<meta name="description" content="Open a WhatsApp exported chat (.txt or .zip), search it, filter by person or date, and export to PDF or CSV. Runs 100% in your browser — nothing is uploaded.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='3' fill='%23111'/><circle cx='8' cy='8' r='3.5' fill='%2325d366'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" defer></script>
+</head>
+<body>
+
+<header class="top">
+  <a class="wordmark" href="./">chat<span>export</span></a>
+  <nav>
+    <a href="#how">How</a>
+    <a href="#privacy">Privacy</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+</header>
+
+<!-- ===== Landing ===== -->
+<main id="landing">
+  <section class="hero">
+    <p class="eyebrow">WhatsApp chat viewer · runs in your browser</p>
+    <h1>Your chats,<br>readable again.</h1>
+    <p class="lede">Drop a WhatsApp exported chat. Search it, filter by person or date, print it to PDF. Nothing is uploaded — the file never leaves this tab.</p>
+
+    <label class="drop" id="drop" for="file">
+      <input type="file" id="file" accept=".txt,.zip,text/plain,application/zip" hidden>
+      <span class="drop-big">Drop <em>.txt</em> or <em>.zip</em> here</span>
+      <span class="drop-small">or click to choose · Android &amp; iPhone exports</span>
+    </label>
+    <button class="link" id="sample">Try with a sample chat →</button>
+  </section>
+
+  <section class="grid3" id="how">
+    <div><span class="num">01</span><h3>Export from WhatsApp</h3><p>Open the chat → ⋮ or (i) → <b>Export chat</b>. Choose “Include media” for photos, or “Without media” for a small file.</p></div>
+    <div><span class="num">02</span><h3>Drop it here</h3><p>The .txt or .zip is parsed on your device with JavaScript. No account, no upload, no server.</p></div>
+    <div><span class="num">03</span><h3>Search, filter, print</h3><p>Find any message, filter by sender or date range, then export to PDF or CSV for records, court, HR or memories.</p></div>
+  </section>
+
+  <section class="privacy" id="privacy">
+    <h2>Privacy by design, not by promise.</h2>
+    <p>This page is static HTML. There is no backend to send your messages to. Turn off Wi‑Fi after the page loads — it still works. Close the tab and everything is gone.</p>
+  </section>
+
+  <section class="faq" id="faq">
+    <h2>FAQ</h2>
+    <details><summary>How do I export a WhatsApp chat?</summary><p><b>Android:</b> open the chat → ⋮ → More → Export chat. <b>iPhone:</b> open the chat → tap the name → Export Chat. Save the file to your phone or send it to yourself, then open it here.</p></details>
+    <details><summary>Can I convert a WhatsApp chat to PDF?</summary><p>Yes. Load the chat, apply any filters, click <b>Export PDF</b>. Your browser’s print dialog opens — choose “Save as PDF”.</p></details>
+    <details><summary>Do photos show up?</summary><p>If you exported “with media” as a .zip, photos appear inline next to their messages. Videos and audio are listed by file name.</p></details>
+    <details><summary>Is this really private?</summary><p>Yes. Everything runs in your browser. You can verify with the network tab in developer tools — no requests are made after the page loads.</p></details>
+    <details><summary>Which formats are supported?</summary><p>WhatsApp .txt exports from Android and iOS (12h and 24h clocks, any date order), and .zip exports with media.</p></details>
+  </section>
+</main>
+
+<!-- ===== App ===== -->
+<main id="app" hidden>
+  <div class="bar">
+    <input id="q" type="search" placeholder="Search messages…" autocomplete="off">
+    <select id="sender"><option value="">Everyone</option></select>
+    <input id="from" type="date" title="From">
+    <input id="to" type="date" title="To">
+    <span class="count" id="count"></span>
+    <span class="spacer"></span>
+    <button id="csv" class="btn ghost">CSV</button>
+    <button id="pdf" class="btn">Export PDF</button>
+    <button id="reset" class="btn ghost" title="Open another file">✕</button>
+  </div>
+
+  <div class="stats" id="stats"></div>
+
+  <div class="chat" id="chat"></div>
+  <button id="more" class="btn ghost more" hidden>Show more</button>
+</main>
+
+<!-- Pro modal (disabled until PRO.enabled) -->
+<dialog id="pro">
+  <form method="dialog">
+    <h3>Unlock exports</h3>
+    <p>One‑time payment. Unlimited PDF &amp; CSV exports, files of any size, forever.</p>
+    <a class="btn" id="buy" href="#" target="_blank" rel="noopener">Get license</a>
+    <label>Already have a key?<input id="key" placeholder="XXXXXXXX-XXXX-XXXX-XXXX" autocomplete="off"></label>
+    <p class="err" id="keyerr"></p>
+    <div class="row"><button class="btn ghost" value="cancel">Close</button><button class="btn" id="activate" value="activate">Activate</button></div>
+  </form>
+</dialog>
+
+<footer>
+  <span>chatexport · static, open, private</span>
+  <a href="https://github.com/" id="gh" target="_blank" rel="noopener">source</a>
+</footer>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>

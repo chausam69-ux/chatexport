@@ -29,3 +29,11 @@ Static files only. GitHub Pages, Cloudflare Pages, Netlify, Vercel — push and 
 ## Pro unlock
 
 `PRO.enabled` in `app.js` is `false` during beta. Set it to `true` and fill `checkoutUrl` with a Lemon Squeezy checkout link to gate exports behind a one-time license key.
+
+## MBOX viewer (`/mbox/`)
+
+Open Gmail Takeout / Thunderbird / Apple Mail `.mbox` archives of any size. Byte offsets are indexed in 8 MB chunks, only headers are kept in memory, bodies are parsed on click. HTML bodies render in a sandboxed iframe with a strict CSP (no scripts, no remote loads). Attachments and `.eml` download per message.
+
+```
+node test_mbox.mjs
+```

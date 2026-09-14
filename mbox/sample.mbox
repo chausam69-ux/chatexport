@@ -1,0 +1,480 @@
+From sender1@example.com Mon, 01 Jan 2024 04:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDEgw5g=?= <sender1@example.com>
+To: me@example.com
+Subject: Invoice #1001
+Date: Mon, 01 Jan 2024 04:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 1 total =E2=82=AC10.
+>From accounting.
+
+Thanks
+
+From sender2@example.com Tue, 02 Jan 2024 05:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDIgw5g=?= <sender2@example.com>
+To: me@example.com
+Subject: Invoice #1002
+Date: Tue, 02 Jan 2024 05:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 2 total =E2=82=AC20.
+>From accounting.
+
+Thanks
+
+From sender3@example.com Wed, 03 Jan 2024 06:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDMgw5g=?= <sender3@example.com>
+To: me@example.com
+Subject: Invoice #1003 – overdue
+Date: Wed, 03 Jan 2024 06:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 3 total =E2=82=AC30.
+>From accounting.
+
+Thanks
+
+From sender4@example.com Thu, 04 Jan 2024 07:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDQgw5g=?= <sender4@example.com>
+To: me@example.com
+Subject: Invoice #1004
+Date: Thu, 04 Jan 2024 07:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 4 total =E2=82=AC40.
+>From accounting.
+
+Thanks
+
+From sender5@example.com Fri, 05 Jan 2024 08:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDUgw5g=?= <sender5@example.com>
+To: me@example.com
+Subject: Invoice #1005
+Date: Fri, 05 Jan 2024 08:30:00 GMT
+Content-Type: multipart/mixed; boundary="B5"
+
+--B5
+Content-Type: text/html; charset=utf-8
+
+<h2>Invoice 5</h2><p>Please find <b>attached</b>.</p><img src="cid:img5">
+--B5
+Content-Type: image/png; name="inv5.png"
+Content-ID: <img5>
+Content-Disposition: attachment; filename="inv5.png"
+Content-Transfer-Encoding: base64
+
+iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkqP9fDwAEcAH+3W5+zAAAAABJRU5ErkJggg==
+--B5--
+
+From sender6@example.com Sat, 06 Jan 2024 09:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDYgw5g=?= <sender6@example.com>
+To: me@example.com
+Subject: Invoice #1006 – overdue
+Date: Sat, 06 Jan 2024 09:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 6 total =E2=82=AC60.
+>From accounting.
+
+Thanks
+
+From sender7@example.com Sun, 07 Jan 2024 10:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDcgw5g=?= <sender7@example.com>
+To: me@example.com
+Subject: Invoice #1007
+Date: Sun, 07 Jan 2024 10:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 7 total =E2=82=AC70.
+>From accounting.
+
+Thanks
+
+From sender8@example.com Mon, 08 Jan 2024 03:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDggw5g=?= <sender8@example.com>
+To: me@example.com
+Subject: Invoice #1008
+Date: Mon, 08 Jan 2024 03:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 8 total =E2=82=AC80.
+>From accounting.
+
+Thanks
+
+From sender9@example.com Tue, 09 Jan 2024 04:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDkgw5g=?= <sender9@example.com>
+To: me@example.com
+Subject: Invoice #1009 – overdue
+Date: Tue, 09 Jan 2024 04:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 9 total =E2=82=AC90.
+>From accounting.
+
+Thanks
+
+From sender10@example.com Wed, 10 Jan 2024 05:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDEwIMOY?= <sender10@example.com>
+To: me@example.com
+Subject: Invoice #1010
+Date: Wed, 10 Jan 2024 05:30:00 GMT
+Content-Type: multipart/mixed; boundary="B10"
+
+--B10
+Content-Type: text/html; charset=utf-8
+
+<h2>Invoice 10</h2><p>Please find <b>attached</b>.</p><img src="cid:img10">
+--B10
+Content-Type: image/png; name="inv10.png"
+Content-ID: <img10>
+Content-Disposition: attachment; filename="inv10.png"
+Content-Transfer-Encoding: base64
+
+iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkqP9fDwAEcAH+3W5+zAAAAABJRU5ErkJggg==
+--B10--
+
+From sender11@example.com Thu, 11 Jan 2024 06:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDExIMOY?= <sender11@example.com>
+To: me@example.com
+Subject: Invoice #1011
+Date: Thu, 11 Jan 2024 06:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 11 total =E2=82=AC110.
+>From accounting.
+
+Thanks
+
+From sender12@example.com Fri, 12 Jan 2024 07:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDEyIMOY?= <sender12@example.com>
+To: me@example.com
+Subject: Invoice #1012 – overdue
+Date: Fri, 12 Jan 2024 07:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 12 total =E2=82=AC120.
+>From accounting.
+
+Thanks
+
+From sender13@example.com Sat, 13 Jan 2024 08:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDEzIMOY?= <sender13@example.com>
+To: me@example.com
+Subject: Invoice #1013
+Date: Sat, 13 Jan 2024 08:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 13 total =E2=82=AC130.
+>From accounting.
+
+Thanks
+
+From sender14@example.com Sun, 14 Jan 2024 09:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDE0IMOY?= <sender14@example.com>
+To: me@example.com
+Subject: Invoice #1014
+Date: Sun, 14 Jan 2024 09:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 14 total =E2=82=AC140.
+>From accounting.
+
+Thanks
+
+From sender15@example.com Mon, 15 Jan 2024 10:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDE1IMOY?= <sender15@example.com>
+To: me@example.com
+Subject: Invoice #1015 – overdue
+Date: Mon, 15 Jan 2024 10:30:00 GMT
+Content-Type: multipart/mixed; boundary="B15"
+
+--B15
+Content-Type: text/html; charset=utf-8
+
+<h2>Invoice 15</h2><p>Please find <b>attached</b>.</p><img src="cid:img15">
+--B15
+Content-Type: image/png; name="inv15.png"
+Content-ID: <img15>
+Content-Disposition: attachment; filename="inv15.png"
+Content-Transfer-Encoding: base64
+
+iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkqP9fDwAEcAH+3W5+zAAAAABJRU5ErkJggg==
+--B15--
+
+From sender16@example.com Tue, 16 Jan 2024 03:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDE2IMOY?= <sender16@example.com>
+To: me@example.com
+Subject: Invoice #1016
+Date: Tue, 16 Jan 2024 03:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 16 total =E2=82=AC160.
+>From accounting.
+
+Thanks
+
+From sender17@example.com Wed, 17 Jan 2024 04:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDE3IMOY?= <sender17@example.com>
+To: me@example.com
+Subject: Invoice #1017
+Date: Wed, 17 Jan 2024 04:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 17 total =E2=82=AC170.
+>From accounting.
+
+Thanks
+
+From sender18@example.com Thu, 18 Jan 2024 05:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDE4IMOY?= <sender18@example.com>
+To: me@example.com
+Subject: Invoice #1018 – overdue
+Date: Thu, 18 Jan 2024 05:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 18 total =E2=82=AC180.
+>From accounting.
+
+Thanks
+
+From sender19@example.com Fri, 19 Jan 2024 06:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDE5IMOY?= <sender19@example.com>
+To: me@example.com
+Subject: Invoice #1019
+Date: Fri, 19 Jan 2024 06:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 19 total =E2=82=AC190.
+>From accounting.
+
+Thanks
+
+From sender20@example.com Sat, 20 Jan 2024 07:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDIwIMOY?= <sender20@example.com>
+To: me@example.com
+Subject: Invoice #1020
+Date: Sat, 20 Jan 2024 07:30:00 GMT
+Content-Type: multipart/mixed; boundary="B20"
+
+--B20
+Content-Type: text/html; charset=utf-8
+
+<h2>Invoice 20</h2><p>Please find <b>attached</b>.</p><img src="cid:img20">
+--B20
+Content-Type: image/png; name="inv20.png"
+Content-ID: <img20>
+Content-Disposition: attachment; filename="inv20.png"
+Content-Transfer-Encoding: base64
+
+iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkqP9fDwAEcAH+3W5+zAAAAABJRU5ErkJggg==
+--B20--
+
+From sender21@example.com Sun, 21 Jan 2024 08:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDIxIMOY?= <sender21@example.com>
+To: me@example.com
+Subject: Invoice #1021 – overdue
+Date: Sun, 21 Jan 2024 08:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 21 total =E2=82=AC210.
+>From accounting.
+
+Thanks
+
+From sender22@example.com Mon, 22 Jan 2024 09:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDIyIMOY?= <sender22@example.com>
+To: me@example.com
+Subject: Invoice #1022
+Date: Mon, 22 Jan 2024 09:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 22 total =E2=82=AC220.
+>From accounting.
+
+Thanks
+
+From sender23@example.com Tue, 23 Jan 2024 10:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDIzIMOY?= <sender23@example.com>
+To: me@example.com
+Subject: Invoice #1023
+Date: Tue, 23 Jan 2024 10:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 23 total =E2=82=AC230.
+>From accounting.
+
+Thanks
+
+From sender24@example.com Wed, 24 Jan 2024 03:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDI0IMOY?= <sender24@example.com>
+To: me@example.com
+Subject: Invoice #1024 – overdue
+Date: Wed, 24 Jan 2024 03:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 24 total =E2=82=AC240.
+>From accounting.
+
+Thanks
+
+From sender25@example.com Thu, 25 Jan 2024 04:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDI1IMOY?= <sender25@example.com>
+To: me@example.com
+Subject: Invoice #1025
+Date: Thu, 25 Jan 2024 04:30:00 GMT
+Content-Type: multipart/mixed; boundary="B25"
+
+--B25
+Content-Type: text/html; charset=utf-8
+
+<h2>Invoice 25</h2><p>Please find <b>attached</b>.</p><img src="cid:img25">
+--B25
+Content-Type: image/png; name="inv25.png"
+Content-ID: <img25>
+Content-Disposition: attachment; filename="inv25.png"
+Content-Transfer-Encoding: base64
+
+iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkqP9fDwAEcAH+3W5+zAAAAABJRU5ErkJggg==
+--B25--
+
+From sender26@example.com Fri, 26 Jan 2024 05:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDI2IMOY?= <sender26@example.com>
+To: me@example.com
+Subject: Invoice #1026
+Date: Fri, 26 Jan 2024 05:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 26 total =E2=82=AC260.
+>From accounting.
+
+Thanks
+
+From sender27@example.com Sat, 27 Jan 2024 06:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDI3IMOY?= <sender27@example.com>
+To: me@example.com
+Subject: Invoice #1027 – overdue
+Date: Sat, 27 Jan 2024 06:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 27 total =E2=82=AC270.
+>From accounting.
+
+Thanks
+
+From sender28@example.com Sun, 28 Jan 2024 07:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDI4IMOY?= <sender28@example.com>
+To: me@example.com
+Subject: Invoice #1028
+Date: Sun, 28 Jan 2024 07:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 28 total =E2=82=AC280.
+>From accounting.
+
+Thanks
+
+From sender29@example.com Mon, 29 Jan 2024 08:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDI5IMOY?= <sender29@example.com>
+To: me@example.com
+Subject: Invoice #1029
+Date: Mon, 29 Jan 2024 08:30:00 GMT
+Content-Type: text/plain; charset=utf-8
+Content-Transfer-Encoding: quoted-printable
+
+Hi,
+
+Invoice 29 total =E2=82=AC290.
+>From accounting.
+
+Thanks
+
+From sender30@example.com Tue, 30 Jan 2024 09:30:00 GMT
+From: =?UTF-8?B?U2VuZGVyIDMwIMOY?= <sender30@example.com>
+To: me@example.com
+Subject: Invoice #1030 – overdue
+Date: Tue, 30 Jan 2024 09:30:00 GMT
+Content-Type: multipart/mixed; boundary="B30"
+
+--B30
+Content-Type: text/html; charset=utf-8
+
+<h2>Invoice 30</h2><p>Please find <b>attached</b>.</p><img src="cid:img30">
+--B30
+Content-Type: image/png; name="inv30.png"
+Content-ID: <img30>
+Content-Disposition: attachment; filename="inv30.png"
+Content-Transfer-Encoding: base64
+
+iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNkqP9fDwAEcAH+3W5+zAAAAABJRU5ErkJggg==
+--B30--
+

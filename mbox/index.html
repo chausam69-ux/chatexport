@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open MBOX files in your browser — search Gmail Takeout &amp; Thunderbird archives privately</title>
+<meta name="description" content="Open an .mbox file (Gmail Takeout, Thunderbird, Apple Mail) in your browser. Search by sender, subject or date, read messages, save attachments and .eml. Nothing is uploaded.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='3' fill='%23111'/><circle cx='8' cy='8' r='3.5' fill='%2325d366'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>
+  .split { display: grid; grid-template-columns: minmax(280px, 380px) 1fr; gap: 0; border-top: 1px solid var(--line); min-height: 70vh; }
+  .list { border-right: 1px solid var(--line); overflow: auto; max-height: calc(100vh - 120px); }
+  .row { padding: 12px 14px; border-bottom: 1px solid var(--line); cursor: pointer; display: grid; gap: 2px; }
+  .row:hover { background: #fff; }
+  .row.sel { background: #fff; box-shadow: inset 3px 0 0 var(--accent); }
+  .row .f { font-size: 14px; font-weight: 500; display: flex; justify-content: space-between; gap: 8px; }
+  .row .f time { font-family: var(--mono); font-size: 11px; color: var(--mute); white-space: nowrap; }
+  .row .s { font-size: 13px; color: var(--ink); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .row .a { font-family: var(--mono); font-size: 11px; color: var(--mute); }
+  .view { padding: 24px 28px; min-width: 0; }
+  .view .hdr { border-bottom: 1px solid var(--line); padding-bottom: 16px; margin-bottom: 16px; }
+  .view h2 { font-size: 22px; margin-bottom: 8px; }
+  .view .meta { font-family: var(--mono); font-size: 12px; color: var(--mute); display: grid; gap: 2px; }
+  .view .meta b { color: var(--ink); font-weight: 500; }
+  .view iframe { width: 100%; border: 0; min-height: 60vh; background: #fff; border: 1px solid var(--line); border-radius: 4px; }
+  .view pre { white-space: pre-wrap; overflow-wrap: anywhere; font: 14px/1.5 var(--sans); background: #fff; border: 1px solid var(--line); border-radius: 4px; padding: 16px; }
+  .atts { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .atts a { font-family: var(--mono); font-size: 12px; padding: 6px 10px; border: 1px solid var(--line); border-radius: 3px; text-decoration: none; background: #fff; }
+  .empty { color: var(--mute); font-family: var(--mono); font-size: 13px; padding: 40px; text-align: center; }
+  .prog { font-family: var(--mono); font-size: 12px; color: var(--mute); margin-top: 16px; }
+  @media (max-width: 800px) { .split { grid-template-columns: 1fr; } .list { max-height: 40vh; border-right: 0; border-bottom: 1px solid var(--line); } }
+  @media print { .split { display: block; border: 0; } .list, .bar { display: none !important; } .view { padding: 0; } .view iframe { min-height: 0; height: auto; } }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <a class="wordmark" href="../">chat<span>export</span></a>
+  <nav>
+    <a href="../">WhatsApp</a>
+    <a href="./">MBOX</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+</header>
+
+<main id="landing">
+  <section class="hero">
+    <p class="eyebrow">MBOX viewer · Gmail Takeout · Thunderbird · Apple Mail</p>
+    <h1>Open .mbox,<br>no install.</h1>
+    <p class="lede">Drop an MBOX archive of any size. Browse, search by sender, subject or date, read messages with attachments, save any email as .eml. Parsed on your device — nothing is uploaded.</p>
+
+    <label class="drop" id="drop" for="file">
+      <input type="file" id="file" accept=".mbox,.mbx,.txt,application/mbox" hidden>
+      <span class="drop-big">Drop <em>.mbox</em> here</span>
+      <span class="drop-small">or click to choose · multi‑GB files OK</span>
+    </label>
+    <button class="link" id="sample">Try with a sample mailbox →</button>
+    <p class="prog" id="prog"></p>
+  </section>
+
+  <section class="grid3">
+    <div><span class="num">01</span><h3>Get your .mbox</h3><p>Gmail: <b>takeout.google.com</b> → Mail → export. Thunderbird: right‑click folder → Export. Apple Mail: Mailbox → Export Mailbox.</p></div>
+    <div><span class="num">02</span><h3>Drop it here</h3><p>The file is indexed in your browser. Only headers are read up front, so even a 5 GB archive opens in seconds.</p></div>
+    <div><span class="num">03</span><h3>Search &amp; save</h3><p>Filter by sender, subject or date. Open a message to read it, download attachments, print to PDF or save as .eml.</p></div>
+  </section>
+
+  <section class="faq" id="faq">
+    <h2>FAQ</h2>
+    <details><summary>How do I open an MBOX file on Windows or Mac?</summary><p>Drop it on this page. No Thunderbird, no Outlook, no converter. Works in Chrome, Edge, Firefox and Safari.</p></details>
+    <details><summary>Is my email uploaded anywhere?</summary><p>No. This is a static page with no server. Open the browser network tab: after page load, zero requests are made.</p></details>
+    <details><summary>Can it handle large Gmail Takeout files?</summary><p>Yes. The file is scanned in chunks and only message boundaries and headers are kept in memory. Bodies are parsed when you click a message.</p></details>
+    <details><summary>Can I convert MBOX to PDF?</summary><p>Open a message and click <b>Print</b> → Save as PDF. Bulk export is on the roadmap.</p></details>
+  </section>
+</main>
+
+<main id="app" hidden>
+  <div class="bar">
+    <input id="q" type="search" placeholder="Search from, to, subject…" autocomplete="off">
+    <input id="from" type="date" title="From">
+    <input id="to" type="date" title="To">
+    <span class="count" id="count"></span>
+    <span class="spacer"></span>
+    <button id="csv" class="btn ghost">CSV index</button>
+    <button id="reset" class="btn ghost" title="Open another file">✕</button>
+  </div>
+  <div class="split">
+    <div class="list" id="list"></div>
+    <div class="view" id="view"><p class="empty">Select a message</p></div>
+  </div>
+</main>
+
+<footer>
+  <span>chatexport · static, open, private</span>
+  <a href="https://github.com/chausam69-ux/chatexport" target="_blank" rel="noopener">source</a>
+</footer>
+
+<script type="module" src="mbox.js"></script>
+</body>
+</html>

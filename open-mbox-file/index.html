@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How to open an MBOX file — no Thunderbird needed</title>
+<meta name="description" content="An .mbox file is a plain-text mailbox: every email stacked in one file. Windows and macOS can't open it natively. Instead of installing Thunderbird or uplo">
+<link rel="canonical" href="https://chausam69-ux.github.io/chatexport/open-mbox-file/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="How to open an MBOX file — no Thunderbird needed">
+<meta property="og:description" content="An .mbox file is a plain-text mailbox: every email stacked in one file. Windows and macOS can't open it natively. Instead of installing Thunderbird or uplo">
+<meta property="og:url" content="https://chausam69-ux.github.io/chatexport/open-mbox-file/">
+<meta property="og:image" content="https://chausam69-ux.github.io/chatexport/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="How to open an MBOX file — no Thunderbird needed">
+<meta name="twitter:description" content="An .mbox file is a plain-text mailbox: every email stacked in one file. Windows and macOS can't open it natively. Instead of installing Thunderbird or uplo">
+<meta name="twitter:image" content="https://chausam69-ux.github.io/chatexport/og.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='3' fill='%23111'/><circle cx='8' cy='8' r='3.5' fill='%2325d366'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>.steps{counter-reset:s;max-width:800px;border-top:1px solid var(--line)}.steps p{counter-increment:s;padding:24px 0;margin:0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:48px 1fr;gap:12px;font-size:18px}.steps p::before{content:"0" counter(s);font-family:var(--mono);font-size:12px;color:var(--mute);padding-top:6px}code{font-family:var(--mono);font-size:.9em;background:#fff;border:1px solid var(--line);padding:1px 6px;border-radius:3px}</style>
+</head>
+<body>
+<header class="top">
+  <a class="wordmark" href="../">chat<span>export</span></a>
+  <nav><a href="../">WhatsApp</a><a href="../mbox/">MBOX</a><a href="#faq">FAQ</a></nav>
+</header>
+<main>
+  <section class="hero">
+    <p class="eyebrow">Runs in your browser · nothing uploaded</p>
+    <h1>Open an .mbox file<br>without installing anything.</h1>
+    <p class="lede">An .mbox file is a plain-text mailbox: every email stacked in one file. Windows and macOS can't open it natively. Instead of installing Thunderbird or uploading your mail to a converter site, drop the file here — it's indexed in your browser and never uploaded.</p>
+    <a class="btn" href="../mbox/" style="font-size:18px;padding:14px 24px">Open the MBOX viewer →</a>
+  </section>
+  <section class="steps"><p>Locate the .mbox (Google Takeout puts it under Mail/, Thunderbird under its profile folder, Apple Mail exports as a folder containing mbox).</p><p>Drop it on the viewer. Multi-GB files are fine — only message boundaries and headers are read up front.</p><p>Search by sender, subject or date. Click a message to read it, save attachments, download as .eml, or print to PDF.</p></section>
+  <section class="faq" id="faq">
+    <h2>FAQ</h2>
+    <details><summary>Can I open a 10 GB Gmail Takeout mbox?</summary><p>Yes. The file is scanned in 8 MB chunks; memory use stays small regardless of size.</p></details>
+    <details><summary>Is anything uploaded?</summary><p>No. This is a static page with no backend. Turn off your connection after it loads and it still works.</p></details>
+    <details><summary>What about Apple Mail .mbox folders?</summary><p>Apple Mail exports a folder named *.mbox containing an mbox file inside — open that inner file.</p></details>
+  </section>
+</main>
+<footer><span>chatexport · static, open, private</span><a href="https://github.com/chausam69-ux/chatexport" target="_blank" rel="noopener">source</a></footer>
+</body>
+</html>

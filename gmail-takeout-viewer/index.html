@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Gmail Takeout viewer — read your exported Gmail in the browser</title>
+<meta name="description" content="Google Takeout exports Gmail as one large .mbox file with no viewer. This page opens it directly in your browser: browse, search and read every message, wi">
+<link rel="canonical" href="https://chausam69-ux.github.io/chatexport/gmail-takeout-viewer/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Gmail Takeout viewer — read your exported Gmail in the browser">
+<meta property="og:description" content="Google Takeout exports Gmail as one large .mbox file with no viewer. This page opens it directly in your browser: browse, search and read every message, wi">
+<meta property="og:url" content="https://chausam69-ux.github.io/chatexport/gmail-takeout-viewer/">
+<meta property="og:image" content="https://chausam69-ux.github.io/chatexport/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gmail Takeout viewer — read your exported Gmail in the browser">
+<meta name="twitter:description" content="Google Takeout exports Gmail as one large .mbox file with no viewer. This page opens it directly in your browser: browse, search and read every message, wi">
+<meta name="twitter:image" content="https://chausam69-ux.github.io/chatexport/og.png">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><rect width='16' height='16' rx='3' fill='%23111'/><circle cx='8' cy='8' r='3.5' fill='%2325d366'/></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../styles.css">
+<style>.steps{counter-reset:s;max-width:800px;border-top:1px solid var(--line)}.steps p{counter-increment:s;padding:24px 0;margin:0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:48px 1fr;gap:12px;font-size:18px}.steps p::before{content:"0" counter(s);font-family:var(--mono);font-size:12px;color:var(--mute);padding-top:6px}code{font-family:var(--mono);font-size:.9em;background:#fff;border:1px solid var(--line);padding:1px 6px;border-radius:3px}</style>
+</head>
+<body>
+<header class="top">
+  <a class="wordmark" href="../">chat<span>export</span></a>
+  <nav><a href="../">WhatsApp</a><a href="../mbox/">MBOX</a><a href="#faq">FAQ</a></nav>
+</header>
+<main>
+  <section class="hero">
+    <p class="eyebrow">Runs in your browser · nothing uploaded</p>
+    <h1>Read your Google Takeout<br>mail export.</h1>
+    <p class="lede">Google Takeout exports Gmail as one large .mbox file with no viewer. This page opens it directly in your browser: browse, search and read every message, with attachments, without re-importing into Gmail or uploading to a third party.</p>
+    <a class="btn" href="../mbox/" style="font-size:18px;padding:14px 24px">Open the Takeout viewer →</a>
+  </section>
+  <section class="steps"><p>Go to takeout.google.com → deselect all → select <b>Mail</b> → export. Choose a larger archive size (e.g. 50 GB) so the mbox isn't split.</p><p>Unzip the archive and find <code>Mail/All mail Including Spam and Trash.mbox</code>.</p><p>Drop that file on the viewer. Search, read, save attachments or .eml files.</p></section>
+  <section class="faq" id="faq">
+    <h2>FAQ</h2>
+    <details><summary>Why is my Takeout mbox so large?</summary><p>It includes every message with attachments, including Spam and Trash. Labels are stored as headers (X-Gmail-Labels).</p></details>
+    <details><summary>Can I put the mail back into Gmail?</summary><p>Not from here — that needs an IMAP upload tool and Gmail throttles it heavily. This viewer is for reading and searching the archive.</p></details>
+    <details><summary>Does it read Gmail labels?</summary><p>Labels appear in the message headers as X-Gmail-Labels; label filtering is planned.</p></details>
+  </section>
+</main>
+<footer><span>chatexport · static, open, private</span><a href="https://github.com/chausam69-ux/chatexport" target="_blank" rel="noopener">source</a></footer>
+</body>
+</html>
